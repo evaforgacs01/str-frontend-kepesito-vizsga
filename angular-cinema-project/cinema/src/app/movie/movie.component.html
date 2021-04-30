@@ -5,9 +5,24 @@
       <input id="title" type="text" class="form-control"
         required pattern="" name="title" [(ngModel)]="movie.title">
     </div>
+    <div class="form-group">
+      <label class="text-warning" for="year">Release year:</label>
+      <input id="year" type="text" class="form-control"
+        required pattern="" name="title" [(ngModel)]="movie.title">
+    </div>
+    <div class="form-group">
+      <label class="text-warning" for="category">Category:</label>
+      <select name="" class="custom-select bg-light" id="category" placeholder="Choose Category">
+        <option value="">
+
+        </option>
+      </select>
+    </div>
     <div class="row">
       <div class="form-group col-6">
-
+        <button [disabled]="mForm.invalid" class="btn btn-warning">Save</button>
+        <small  class="text-danger">Fill all field to save!</small>
+        <div [hidden]="mForm.controls.status?.valid || mForm.controls.status?.pristine" class="error-message">Missing data!</div>
       </div>
       <div class="form-group col-6">
 

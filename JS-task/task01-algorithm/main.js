@@ -9,7 +9,10 @@ const movieList = [
 ]
 
 function movieFilter(list, year, maxTimeInMinutes) {
-
+    return list
+        .filter(movie => movie.year === year && movie.maxTimeInMinutes < maxTimeInMinutes)
+        .map(item => item.title);
+        
 }
 
 export { movieFilter };
